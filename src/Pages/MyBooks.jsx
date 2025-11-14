@@ -26,11 +26,24 @@ export default function MyBooks() {
                 mybooks.length === 0 ?
                     <div className="text-xl text-center italic font-extralight">You have no Book</div>
                     :
-                    <div className="grid grid-cols-4 gap-4 px-30 pb-10">
-                        {
-                            mybooks.map((book, index) => (<AllMyBooks key={index} book={book}></AllMyBooks>))
-                        }
-                    </div>
+                    <table className="min-w-full border-collapse">
+                        <thead>
+                            <tr className="border-b border-gray-300 text-left text-gray-700">
+                                <th className="py-3 px-4 font-semibold">COVER</th>
+                                <th className="py-3 px-4 font-semibold">TITLE</th>
+                                <th className="py-3 px-4 font-semibold">AUTHOR</th>
+                                <th className="py-3 px-4 font-semibold">GENRE</th>
+                                <th className="py-3 px-4 font-semibold">RATING</th>
+                                <th className="py-3 px-4 font-semibold"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                mybooks.map((book, index) => (<AllMyBooks key={index} book={book}></AllMyBooks>))
+                            }
+                        </tbody>
+                    </table>
+
             }
 
         </div>

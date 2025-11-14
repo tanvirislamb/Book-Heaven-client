@@ -34,7 +34,7 @@ export default function AllMyBooks({ book }) {
             .then(() => {
                 Swal.fire({
                     title: "Updated",
-                    text: "Your file has been deleted.",
+                    text: "Your file has been Updated.",
                     icon: "success"
                 });
             })
@@ -74,48 +74,50 @@ export default function AllMyBooks({ book }) {
     }
 
     return (
-        <div>
-            <div className="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-2xl transform transition-all duration-300 border border-gray-100">
-                <div className="relative">
-                    <img
-                        src={currentbook.coverImage}
-                        alt={currentbook.title}
-                        className="w-full h-64 object-cover rounded-t-2xl"
-                    />
-                    <div className="absolute top-3 left-3">
-                        <p className="text-[11px] font-semibold bg-linear-to-r from-blue-500 to-indigo-500 text-white rounded-full py-1 px-3 shadow-md">
-                            {currentbook.genre}
-                        </p>
+        <>
+            <tr className="border-b w-full border-gray-200 hover:bg-linear-to-r from-blue-50 to-indigo-50 transition-all duration-200 cursor-pointer">
+                <td className="py-4 px-5">
+                    <div className="relative w-14 h-20">
+                        <img
+                            src={book.coverImage}
+                            alt={book.title}
+                            className="w-full h-full object-cover rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
+                        />
                     </div>
-                </div>
-                <div className="px-5 py-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-1 line-clamp-1">{currentbook.title}</h3>
-                    <p className="text-sm text-gray-500 mb-4 italic">by {currentbook.author}</p>
-                    <div className="flex justify-between items-center">
-                        <p className="flex items-center gap-1 text-yellow-500 font-semibold">
-                            <FaStar className="text-base" /> {currentbook.rating}
-                        </p>
-                        <div className="space-x-3">
-                            <button
-                                onClick={() => openEditModal(currentbook)}
-                                className="px-4 py-2 bg-linear-to-r from-green-500 to-green-600 rounded-full text-white font-semibold text-sm hover:from-green-600 hover:to-green-700 shadow-md transition-all duration-300"
-                            >
-                                Edit
-                            </button>
-                            <button
-                                onClick={() => deleteBook(currentbook._id)}
-                                className="px-4 py-2 bg-linear-to-r from-red-500 to-red-600 rounded-full text-white font-semibold text-sm hover:from-red-600 hover:to-red-700 shadow-md transition-all duration-300"
-                            >
-                                Delete
-                            </button>
-                        </div>
+                </td>
+                <td className="py-4 px-5 font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200">
+                    {book.title}
+                </td>
+                <td className="py-4 px-5 text-gray-600 italic">{book.author}</td>
+                <td className="py-4 px-5">
+                    <span className="bg-blue-100 text-blue-700 text-sm font-medium px-3 py-1 rounded-full border border-blue-200 shadow-sm">
+                        {book.genre}
+                    </span>
+                </td>
+                <td className="py-4 px-5 text-yellow-600 font-semibold flex items-center gap-1">
+                    <FaStar className="text-yellow-500" /> {book.rating} / 5
+                </td>
+                <td className="py-4 px-5">
+                    <div className="space-x-3">
+                        <button
+                            onClick={() => openEditModal(currentbook)}
+                            className="px-4 py-2 bg-linear-to-r from-green-500 to-green-600 rounded-full text-white font-semibold text-sm hover:from-green-600 hover:to-green-700 shadow-md transition-all duration-300"
+                        >
+                            Edit
+                        </button>
+                        <button
+                            onClick={() => deleteBook(currentbook._id)}
+                            className="px-4 py-2 bg-linear-to-r from-red-500 to-red-600 rounded-full text-white font-semibold text-sm hover:from-red-600 hover:to-red-700 shadow-md transition-all duration-300"
+                        >
+                            Delete
+                        </button>
                     </div>
-                </div>
-            </div>
+                </td>
+            </tr>
 
             {isModalOpen && (
                 <div className="fixed inset-0 bg-black/40 backdrop-blur-md flex justify-center items-center z-50">
-                    <div className="bg-white rounded-2xl p-8 w-full max-w-lg shadow-xl">
+                    <div className="bg-white rounded-2xl p-8 w-full max-w-lg shadow-xl animate-fadeIn">
                         <h2 className="text-2xl font-bold mb-5 text-center">
                             Edit Book
                         </h2>
@@ -227,7 +229,7 @@ export default function AllMyBooks({ book }) {
                     </div>
                 </div>
             )}
-        </div>
+        </>
 
     )
 }
