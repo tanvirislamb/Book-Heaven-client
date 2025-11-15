@@ -24,6 +24,23 @@ export default function Details() {
             })
     }, [id])
 
+    const handleComment = (e) => {
+        e.preventDefault()
+        const userComment = e.target.comment.value
+        const newComment = {
+            bookId: id,
+            name: user.displayName,
+            photoURL: user.photoURL,
+            comment: userComment
+        }
+        axios.post('http://localhost:3000/comments', newComment)
+            .then(() => {
+                setComments([...comments, newComment])
+                e.target.reset()
+            })
+
+    }
+
     return (
         <div>
             <div className="flex flex-col md:flex-row justify-center gap-10 py-12 px-6 bg-linear-to-b from-white to-blue-50 rounded-3xl">
@@ -56,12 +73,19 @@ export default function Details() {
                 </div>
             </div>
             <p className="text-xl font-bold pl-5 pt-5">All Comments</p>
-            <div className="px-6 py-4">
-                {
-                    comments.map((comment, index) => (<Comments key={index} comment={comment}></Comments>))
-                }
-            </div>
-            <form className="flex items-center gap-3 bg-white p-4 rounded-2xl shadow-md border border-gray-200">
+            {
+                comments.length === 0 ?
+                    <p className="text-center font-semibold py-3">No comments</p>
+                    :
+                    <div className="px-6 py-4 space-y-4">
+                        {
+                            comments.map((comment, index) => (<Comments key={index} comment={comment}></Comments>))
+                        }
+                    </div>
+            }
+            <form
+                onSubmit={handleComment}
+                className="flex items-center gap-3 bg-white p-4 rounded-2xl shadow-md border border-gray-200">
                 <img
                     src={user.photoURL}
                     alt="User"
@@ -84,7 +108,6 @@ export default function Details() {
                     <RiSendPlaneFill className="text-xl" />
                 </button>
             </form>
-
         </div>
 
     )
