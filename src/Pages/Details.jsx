@@ -11,7 +11,6 @@ export default function Details() {
     const { user } = useContext(AuthContext)
     const [details, setDetails] = useState([])
     const [comments, setComments] = useState([])
-    const [commentText, setCommentText] = useState("");
 
     useEffect(() => {
         fetch(`http://localhost:3000/books/${id}`)
@@ -37,7 +36,7 @@ export default function Details() {
         axios.post('http://localhost:3000/comments', newComment)
             .then(() => {
                 setComments([...comments, newComment])
-                setCommentText("");
+                e.target.reset()
             })
 
     }
@@ -96,9 +95,8 @@ export default function Details() {
                 <div className="flex-1">
                     <input
                         type="text"
+                        required
                         name="comment"
-                        value={commentText}
-                        onChange={(e) => setCommentText(e.target.value)}
                         placeholder="Write a comment..."
                         className="w-full bg-gray-100 py-3 px-4 rounded-xl outline-none border border-gray-300 focus:border-blue-500 transition-all duration-200"
                     />
@@ -106,7 +104,6 @@ export default function Details() {
 
                 <button
                     type="submit"
-                    disabled={commentText.trim().length === 0}
                     className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center"
                 >
                     <RiSendPlaneFill className="text-xl" />
