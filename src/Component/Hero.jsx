@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const HeroSection = () => {
     return (
         <section
-            className="relative bg-cover bg-center bg-no-repeat text-center py-32 px-4 md:px-10 rounded-2xl overflow-hidden mx-4 md:mx-10 mt-10"
+            className="relative bg-cover bg-center bg-no-repeat text-center py-32 px-4 md:px-10 md:rounded-2xl overflow-hidden md:mx-10 md:mt-10"
             style={{
                 backgroundImage:
                     "url('https://miro.medium.com/v2/1*6Jp3vJWe7VFlFHZ9WhSJng.jpeg')",
