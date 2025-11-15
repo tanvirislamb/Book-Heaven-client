@@ -20,21 +20,21 @@ export default function MyBooks() {
     }, [user])
 
     return (
-        <div className="max-w-[1800px] mx-auto">
-            <p className="text-center text-2xl font-extrabold py-6">My Books</p>
+        <div className="max-w-[1800px] mx-auto  overflow-x-auto">
+            <p className="text-center text-xl md:text-2xl font-extrabold py-3 md:py-6">My Books</p>
             {
                 mybooks.length === 0 ?
                     <div className="text-xl text-center italic font-extralight">You have no Book</div>
                     :
                     <table className="min-w-full border-collapse">
                         <thead>
-                            <tr className="border-b border-gray-300 text-left text-gray-700">
-                                <th className="py-3 px-4 font-semibold">COVER</th>
-                                <th className="py-3 px-4 font-semibold">TITLE</th>
-                                <th className="py-3 px-4 font-semibold">AUTHOR</th>
-                                <th className="py-3 px-4 font-semibold">GENRE</th>
-                                <th className="py-3 px-4 font-semibold">RATING</th>
-                                <th className="py-3 px-4 font-semibold"></th>
+                            <tr className="border-b border-gray-300 text-[12px] md:text-base text-left text-gray-700">
+                                <th className="py-1 md:py-3 px-2 md:px-4 font-semibold">COVER</th>
+                                <th className="py-1 md:py-3 px-2 md:px-4 font-semibold">TITLE</th>
+                                <th className="py-1 md:py-3 px-2 md:px-4 font-semibold">AUTHOR</th>
+                                <th className="py-1 md:py-3 px-2 md:px-4 font-semibold">GENRE</th>
+                                <th className="py-1 md:py-3 px-2 md:px-4 font-semibold">RATING</th>
+                                <th className="py-1 md:py-3 px-2 md:px-4 font-semibold"></th>
                             </tr>
                         </thead>
                         <tbody>
