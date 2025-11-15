@@ -24,10 +24,10 @@ export default function Navber() {
 
     return (
         <div className="w-full shadow py-2 px-6 flex justify-between items-center sticky z-30 top-0 bg-white/85 backdrop-blur-md">
-            <div>
-                <p className="font-extrabold text-2xl text-blue-500">Book Heaven</p>
-            </div>
-            <div className="space-x-8 flex items-center">
+            <Link to='/'>
+                <p className="font-extrabold lg:text-2xl text-blue-500 drop-shadow-md">Book Heaven</p>
+            </Link>
+            <div className="hidden md:flex space-x-8 items-center">
                 <NavLink to='/' className={({ isActive }) => `duration-300 ${isActive ? "font-bold text-blue-500" : "font-semibold"}`}>Home</NavLink>
                 <NavLink to='allbooks' className={({ isActive }) => `duration-300 ${isActive ? "font-bold text-blue-500" : "font-semibold"}`}>All Books</NavLink>
                 {
@@ -49,7 +49,7 @@ export default function Navber() {
                                         <img
                                             src={user.photoURL}
                                             alt="User Avatar"
-                                            className="w-10 h-10 rounded-full object-cover border-2 border-gray-300 hover:scale-105 transition-transform duration-300"
+                                            className="w-7 h-7 lg:w-10 lg:h-10 rounded-full object-cover border-2 border-gray-300 hover:scale-105 transition-transform duration-300"
                                         />
                                         <div className="absolute right-full top-1/2 -translate-y-1/2 mr-3 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-lg">
                                             {user.displayName}
@@ -61,12 +61,12 @@ export default function Navber() {
 
                         </div>
                         <button onClick={logout}
-                            className="px-3 py-1 rounded-md  bg-linear-to-r from-blue-500 to-indigo-600 text-white font-medium cursor-pointer">Log Out</button>
+                            className="px-3 py-1 text-[12px] lg:text-base rounded-md  bg-linear-to-r from-blue-500 to-indigo-600 text-white font-medium cursor-pointer">Log Out</button>
                     </div>
                     :
                     <div className="space-x-3">
-                        <Link to='login' className="px-3 py-1 rounded-md  bg-linear-to-r from-blue-500 to-indigo-600 text-white font-medium">Log In</Link>
-                        <Link to='register' className="px-3 py-1 rounded-md  bg-linear-to-r from-blue-500 to-indigo-600 text-white font-medium">Register</Link>
+                        <Link to='login' className="px-3 py-1 text-[12px] lg:text-base rounded-md  bg-linear-to-r from-blue-500 to-indigo-600 text-white font-medium">Log In</Link>
+                        <Link to='register' className="px-3 py-1 text-[12px] lg:text-base rounded-md  bg-linear-to-r from-blue-500 to-indigo-600 text-white font-medium">Register</Link>
                     </div>
             }
 

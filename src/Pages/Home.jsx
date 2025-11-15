@@ -4,10 +4,10 @@ import Latest from "../Component/Latest";
 export default function Home() {
     return (
         <div>
-            <HeroSection></HeroSection>
+            {/* <HeroSection></HeroSection>
             <div className="py-10">
                 <Latest></Latest>
-            </div>
+            </div> */}
         </div>
     )
 }
