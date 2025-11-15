@@ -43,16 +43,16 @@ export default function Details() {
 
     return (
         <div>
-            <div className="flex flex-col md:flex-row justify-center gap-10 py-12 px-6 bg-linear-to-b from-white to-blue-50 rounded-3xl">
-                <div className="flex-shrink-0">
+            <div className="flex flex-col md:flex-row justify-center gap-10 py-12 px-6 bg-linear-to-b from-white to-blue-50 md:rounded-3xl">
+                <div className="shrink-0">
                     <img
                         src={details.coverImage}
                         alt={details.title}
-                        className="w-[320px] h-[450px] object-cover rounded-2xl shadow-xl hover:scale-105 transform transition-all duration-300"
+                        className="md:w-[320px] md:h-[450px] object-cover rounded-2xl md:shadow-xl hover:scale-105 transform transition-all duration-300"
                     />
                 </div>
                 <div className="flex flex-col justify-center max-w-xl">
-                    <h1 className="text-4xl font-extrabold text-gray-800 mb-2">{details.title}</h1>
+                    <h1 className="text-2xl md:text-4xl font-extrabold text-gray-800 mb-2">{details.title}</h1>
                     <p className="text-lg text-gray-500 italic mb-3">by {details.author}</p>
 
                     <div className="flex items-center gap-3 mb-4">
