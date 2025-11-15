@@ -23,7 +23,7 @@ export default function Navber() {
     }
 
     return (
-        <div className="w-full shadow py-2 px-6 flex justify-between items-center sticky z-30 top-0 bg-white/85 backdrop-blur-2xl">
+        <div className="w-full shadow py-2 px-6 flex justify-between items-center sticky z-30 top-0 bg-white/85 backdrop-blur-md">
             <div>
                 <p className="font-extrabold text-2xl text-blue-500">Book Heaven</p>
             </div>
