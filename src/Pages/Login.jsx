@@ -1,14 +1,17 @@
 import { Link, useLocation, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
+import { IoEye, IoEyeOff } from "react-icons/io5";
 
 export default function Login() {
 
     const { userlogin, setUser, googlesignin } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
+    const [showPassword, setShowPassword] = useState(false);
+    const togglePassword = () => setShowPassword(!showPassword);
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -77,7 +80,7 @@ export default function Login() {
                         <label className="block text-gray-700 font-semibold mb-1">Password</label>
                         <div className="relative">
                             <input
-                                type="password"
+                                type={showPassword ? "text" : "password"}
                                 name="password"
                                 required
                                 placeholder="Enter your password"
@@ -86,7 +89,7 @@ export default function Login() {
                             <button
                                 type="button"
                                 onClick={togglePassword}
-                                className="absolute inset-y-0 right-3 flex items-center text-gray-500 hover:text-teal-600"
+                                className="absolute inset-y-0 right-3 flex items-center text-gray-500 hover:text-blue-600"
                             >
                                 {showPassword ? (
                                     <IoEyeOff className="text-xl" />

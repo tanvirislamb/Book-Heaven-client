@@ -159,7 +159,7 @@ export default function Register() {
                             <button
                                 type="button"
                                 onClick={togglePassword}
-                                className="absolute inset-y-0 right-3 flex items-center text-gray-500 hover:text-teal-600"
+                                className="absolute inset-y-0 right-3 flex items-center text-gray-500 hover:text-blue-600"
                             >
                                 {showPassword ? (
                                     <IoEyeOff className="text-xl" />
