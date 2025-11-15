@@ -5,7 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
 
 export default function Register() {
-    const { signinfunction, profileUpdate, setUser } = useContext(AuthContext)
+    const { signinfunction, profileUpdate, setUser, googlesignin } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
 
@@ -54,11 +54,25 @@ export default function Register() {
 
 
     };
-
-    //   const handleGoogleSignIn = () => {
-    //     // Handle Google sign-in logic here
-    //     console.log("Google Sign-In triggered");
-    //   };
+    const handleGoogleSignIn = () => {
+        googlesignin()
+            .then((result) => {
+                const user = result.user
+                setUser(user)
+                const newUser = {
+                    userId: user.uid,
+                    name: user.displayName,
+                    photoURL: user.photoURL,
+                    email: user.email
+                }
+                axios.post('http://localhost:3000/user', newUser)
+                    .then(data => {
+                        console.log(data)
+                    })
+                    .catch(err => console.log(err));
+                navigate(`${location.state ? location.state : '/'}`)
+            })
+    };
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 to-indigo-100 py-12 px-6">
@@ -138,7 +152,7 @@ export default function Register() {
 
                 {/* Google Sign-In */}
                 <button
-                    // onClick={handleGoogleSignIn}
+                    onClick={handleGoogleSignIn}
                     className="w-full flex items-center justify-center gap-3 border border-gray-300 py-3 rounded-xl shadow-sm hover:bg-gray-50 transition-all duration-200"
                 >
                     <FcGoogle className="text-2xl" />

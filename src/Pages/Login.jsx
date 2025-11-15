@@ -2,10 +2,11 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import axios from "axios";
 
 export default function Login() {
 
-    const { userlogin, setUser } = useContext(AuthContext)
+    const { userlogin, setUser, googlesignin } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
 
@@ -27,8 +28,23 @@ export default function Login() {
     };
 
     const handleGoogleSignIn = () => {
-        // Handle Google sign-in logic here
-        console.log("Google Sign-In triggered");
+        googlesignin()
+            .then((result) => {
+                const user = result.user
+                setUser(user)
+                const newUser = {
+                    userId: user.uid,
+                    name: user.displayName,
+                    photoURL: user.photoURL,
+                    email: user.email
+                }
+                axios.post('http://localhost:3000/user', newUser)
+                    .then(data => {
+                        console.log(data)
+                    })
+                    .catch(err => console.log(err));
+                navigate(`${location.state ? location.state : '/'}`)
+            })
     };
 
     return (
