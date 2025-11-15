@@ -11,6 +11,7 @@ export default function Details() {
     const { user } = useContext(AuthContext)
     const [details, setDetails] = useState([])
     const [comments, setComments] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         fetch(`http://localhost:3000/books/${id}`)
@@ -21,6 +22,7 @@ export default function Details() {
         axios(`http://localhost:3000/comments/${id}`)
             .then((data) => {
                 setComments(data.data)
+                setLoading(false)
             })
     }, [id])
 
@@ -74,15 +76,27 @@ export default function Details() {
             </div>
             <p className="text-xl font-bold pl-5 pt-5">All Comments</p>
             {
-                comments.length === 0 ?
-                    <p className="text-center font-semibold py-3">No comments</p>
+                loading ?
+                    (<div className="flex px-5 py-10 text-indigo-600">
+                        <span className="loading loading-dots loading-lg"></span>
+                    </div>)
                     :
-                    <div className="px-6 py-4 space-y-4">
-                        {
-                            comments.map((comment, index) => (<Comments key={index} comment={comment}></Comments>))
-                        }
-                    </div>
+                    (
+                        <div>
+                            {
+                                comments.length === 0 ?
+                                    <p className="text-center font-semibold py-3">No comments</p>
+                                    :
+                                    <div className="px-6 py-4 space-y-4">
+                                        {
+                                            comments.map((comment, index) => (<Comments key={index} comment={comment}></Comments>))
+                                        }
+                                    </div>
+                            }
+                        </div>
+                    )
             }
+
             <form
                 onSubmit={handleComment}
                 className="flex items-center gap-3 bg-white p-4 rounded-2xl shadow-md border border-gray-200">
