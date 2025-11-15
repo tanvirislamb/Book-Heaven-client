@@ -75,13 +75,26 @@ export default function Login() {
                     {/* Password */}
                     <div>
                         <label className="block text-gray-700 font-semibold mb-1">Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            required
-                            placeholder="Enter your password"
-                            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                        />
+                        <div className="relative">
+                            <input
+                                type="password"
+                                name="password"
+                                required
+                                placeholder="Enter your password"
+                                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                            />
+                            <button
+                                type="button"
+                                onClick={togglePassword}
+                                className="absolute inset-y-0 right-3 flex items-center text-gray-500 hover:text-teal-600"
+                            >
+                                {showPassword ? (
+                                    <IoEyeOff className="text-xl" />
+                                ) : (
+                                    <IoEye className="text-xl" />
+                                )}
+                            </button>
+                        </div>
                     </div>
 
                     {/* Submit */}

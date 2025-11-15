@@ -1,13 +1,35 @@
 import { Link, useLocation, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
+import { IoEye, IoEyeOff } from "react-icons/io5";
 
 export default function Register() {
     const { signinfunction, profileUpdate, setUser, googlesignin } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
+
+    const [passwordError, setPasswordError] = useState("");
+    const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
+    const togglePassword = () => setShowPassword(!showPassword);
+
+
+    const handlePasswordChange = (e) => {
+        const value = e.target.value;
+        setPassword(value);
+
+        if (value.length < 6) {
+            setPasswordError("Password must be at least 6 characters long.");
+        } else if (!/[A-Z]/.test(value)) {
+            setPasswordError("Password must contain at least one uppercase letter.");
+        } else if (!/[a-z]/.test(value)) {
+            setPasswordError("Password must contain at least one lowercase letter.");
+        } else {
+            setPasswordError("");
+        }
+    };
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -17,7 +39,7 @@ export default function Register() {
         const email = form.email.value;
         const password = form.password.value;
 
-
+        if (passwordError || !password) return;
 
         signinfunction(email, password)
             .then((result) => {
@@ -125,13 +147,27 @@ export default function Register() {
                     {/* Password */}
                     <div>
                         <label className="block text-gray-700 font-semibold mb-1">Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            required
-                            placeholder="Enter your password"
-                            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                        />
+                        <div className="relative">
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                name="password"
+                                onChange={handlePasswordChange}
+                                required
+                                placeholder="Enter your password"
+                                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                            />
+                            <button
+                                type="button"
+                                onClick={togglePassword}
+                                className="absolute inset-y-0 right-3 flex items-center text-gray-500 hover:text-teal-600"
+                            >
+                                {showPassword ? (
+                                    <IoEyeOff className="text-xl" />
+                                ) : (
+                                    <IoEye className="text-xl" />
+                                )}
+                            </button>
+                        </div>
                     </div>
 
                     {/* Submit */}
@@ -142,6 +178,9 @@ export default function Register() {
                         Register
                     </button>
                 </form>
+                {passwordError && (
+                    <p className="text-red-500 text-sm mt-1">{passwordError}</p>
+                )}
 
                 {/* Divider */}
                 <div className="flex items-center my-6">
