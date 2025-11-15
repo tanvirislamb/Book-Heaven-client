@@ -17,7 +17,7 @@ export default function Latest() {
         <div className="max-w-[1800px] mx-auto">
             <p className="text-center font-bold text-2xl">Latest Additions</p>
 
-            <div className="grid grid-cols-3 gap-4 px-40 pt-10">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 md:px-10 lg:px-40 pt-10">
                 {
                     latest.map((eachbook, index) => (<LatestBooks key={index} eachbook={eachbook}></LatestBooks>))
                 }
