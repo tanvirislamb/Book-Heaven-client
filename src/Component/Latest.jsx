@@ -18,7 +18,7 @@ export default function Latest() {
 
     return (
         <div className="max-w-[1800px] mx-auto">
-            <p className="text-center font-bold text-2xl">Latest Additions</p>
+            <p className="text-center font-bold text-2xl text-base-content">Latest Additions</p>
             {
                 loading ? (<div className="flex justify-center pt-10 text-indigo-600">
                     <span className="loading loading-bars loading-lg"></span>

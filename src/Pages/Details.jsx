@@ -46,7 +46,7 @@ export default function Details() {
 
     return (
         <div>
-            <div className="flex flex-col md:flex-row justify-center gap-10 py-12 px-6 bg-linear-to-b from-white to-blue-50 md:rounded-3xl">
+            <div className="flex flex-col md:flex-row justify-center gap-10 py-12 px-6 bg-base-300 md:rounded-3xl">
                 <div className="shrink-0">
                     <img
                         src={details.coverImage}
@@ -55,7 +55,7 @@ export default function Details() {
                     />
                 </div>
                 <div className="flex flex-col justify-center max-w-xl">
-                    <h1 className="text-2xl md:text-4xl font-extrabold text-gray-800 mb-2">{details.title}</h1>
+                    <h1 className="text-2xl md:text-4xl font-extrabold text-base-content mb-2">{details.title}</h1>
                     <p className="text-lg text-gray-500 italic mb-3">by {details.author}</p>
 
                     <div className="flex items-center gap-3 mb-4">
@@ -69,9 +69,9 @@ export default function Details() {
                         Uploaded by: <span className="font-semibold">{details.userEmail}</span>
                     </p>
 
-                    <div className="bg-white/80 backdrop-blur-md border border-gray-200 rounded-2xl p-5 shadow-inner">
-                        <h2 className="text-xl font-semibold text-gray-800 mb-2">Summary</h2>
-                        <p className="text-gray-600 leading-relaxed">{details.summary}</p>
+                    <div className="bg-base-200 backdrop-blur-md border border-gray-200 rounded-2xl p-5 shadow-inner">
+                        <h2 className="text-xl font-semibold text-base-content mb-2">Summary</h2>
+                        <p className="text-base-content font-extralight leading-relaxed">{details.summary}</p>
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@ export default function Details() {
 
             <form
                 onSubmit={handleComment}
-                className="flex items-center gap-3 bg-white p-4 rounded-2xl shadow-md border border-gray-200">
+                className="flex items-center gap-3 bg-base-200 p-4 rounded-2xl shadow-md border border-secondary">
                 <div>
                     {
                         user.photoURL ?
@@ -123,7 +123,7 @@ export default function Details() {
                         required
                         name="comment"
                         placeholder="Write a comment..."
-                        className="w-full bg-gray-100 py-3 px-4 rounded-xl outline-none border border-gray-300 focus:border-blue-500 transition-all duration-200"
+                        className="w-full bg-base-300 py-3 px-4 rounded-xl outline-none border border-gray-300 focus:border-blue-500 transition-all duration-200"
                     />
                 </div>
 

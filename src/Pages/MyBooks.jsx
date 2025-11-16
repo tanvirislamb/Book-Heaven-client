@@ -38,7 +38,7 @@ export default function MyBooks() {
                                 <div className="overflow-x-auto">
                                     <table className="min-w-[1000px] lg:min-w-full border-collapse">
                                         <thead>
-                                            <tr className="border-b border-gray-300 text-[12px] md:text-base text-left text-gray-700">
+                                            <tr className="border-b border-secondary text-[12px] md:text-base text-left text-base-content">
                                                 <th className="py-1 md:py-3 px-2 md:px-4 font-semibold">COVER</th>
                                                 <th className="py-1 md:py-3 px-2 md:px-4 font-semibold">TITLE</th>
                                                 <th className="py-1 md:py-3 px-2 md:px-4 font-semibold">AUTHOR</th>

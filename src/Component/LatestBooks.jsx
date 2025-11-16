@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 export default function LatestBooks({ eachbook }) {
     return (
-        <div className="bg-white md:shadow-md md:rounded-2xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transform transition-all duration-300 md:border border-gray-100">
+        <div className="bg-base-200 md:shadow-md md:rounded-2xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transform transition-all duration-300 md:border border-base-300">
             <div className="relative">
                 <img
                     src={eachbook.coverImage}
@@ -17,7 +17,7 @@ export default function LatestBooks({ eachbook }) {
                 </div>
             </div>
             <div className="px-5 py-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-1 line-clamp-1">{eachbook.title}</h3>
+                <h3 className="text-xl font-bold text-base-content mb-1 line-clamp-1">{eachbook.title}</h3>
                 <p className="text-sm text-gray-500 mb-4 italic">by {eachbook.author}</p>
                 <div className="flex justify-between items-center">
                     <p className="flex items-center gap-1 text-yellow-500 font-semibold">

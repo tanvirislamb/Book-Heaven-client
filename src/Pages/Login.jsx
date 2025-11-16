@@ -51,10 +51,10 @@ export default function Login() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 to-indigo-100 py-12 px-6">
-            <div className="bg-white shadow-xl rounded-3xl w-full max-w-md p-8">
+        <div className="min-h-screen flex items-center justify-center bg-primary py-12 px-6">
+            <div className="bg-base-300 shadow-xl rounded-3xl w-full max-w-md p-8">
                 {/* Title */}
-                <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">
+                <h2 className="text-3xl font-bold text-center text-base-content mb-2">
                     Welcome Back 👋
                 </h2>
                 <p className="text-center text-gray-500 mb-8">
@@ -65,7 +65,7 @@ export default function Login() {
                 <form onSubmit={handleLogin} className="space-y-5">
                     {/* Email */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-1">Email</label>
+                        <label className="block text-base-content font-semibold mb-1">Email</label>
                         <input
                             type="email"
                             name="email"
@@ -77,7 +77,7 @@ export default function Login() {
 
                     {/* Password */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-1">Password</label>
+                        <label className="block text-base-content font-semibold mb-1">Password</label>
                         <div className="relative">
                             <input
                                 type={showPassword ? "text" : "password"}
@@ -119,10 +119,10 @@ export default function Login() {
                 {/* Google Sign-In */}
                 <button
                     onClick={handleGoogleSignIn}
-                    className="w-full flex items-center justify-center gap-3 border border-gray-300 py-3 rounded-xl shadow-sm hover:bg-gray-50 transition-all duration-200"
+                    className="w-full flex items-center justify-center gap-3 border border-gray-300 py-3 rounded-xl shadow-sm cursor-pointer transition-all duration-200"
                 >
                     <FcGoogle className="text-2xl" />
-                    <span className="font-medium text-gray-700">Sign in with Google</span>
+                    <span className="font-medium text-base-content">Sign in with Google</span>
                 </button>
 
                 {/* Navigate to Register */}

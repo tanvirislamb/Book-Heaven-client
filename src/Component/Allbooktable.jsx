@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 export default function Allbooktable({ book }) {
     return (
-        <tr className="border-b border-gray-200 hover:bg-linear-to-r from-blue-50 to-indigo-50 transition-all duration-200 cursor-pointer">
+        <tr className="border-b border-secondary  transition-all duration-200 cursor-pointer">
             <td className="py-2 px-3 md:py-4 md:px-5">
                 <div className="relative w-14 h-20">
                     <img
@@ -13,7 +13,7 @@ export default function Allbooktable({ book }) {
                     />
                 </div>
             </td>
-            <td className="py-2 px-3 md:py-4 md:px-5 text-sm md:text-base font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200">
+            <td className="py-2 px-3 md:py-4 md:px-5 text-sm md:text-base font-semibold text-base-content hover:text-blue-600 transition-colors duration-200">
                 {book.title}
             </td>
             <td className="py-2 px-3 md:py-4 md:px-5 text-sm md:text-base text-gray-600 italic">{book.author}</td>

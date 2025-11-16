@@ -35,7 +35,10 @@ export default function AllMyBooks({ book }) {
                 Swal.fire({
                     title: "Updated",
                     text: "Your file has been Updated.",
-                    icon: "success"
+                    icon: "success",
+                    confirmButtonColor: "#3B82F6",
+                    background: "var(--color-base-300)",
+                    color: "var(--color-base-content)",
                 });
             })
 
@@ -54,15 +57,20 @@ export default function AllMyBooks({ book }) {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
+            confirmButtonText: "Yes, delete it!",
+            background: "var(--color-base-300)",
+            color: "var(--color-base-content)",
         }).then((result) => {
             if (result.isConfirmed) {
                 axios.delete(`http://localhost:3000/books/${id}`)
                     .then(() => {
                         Swal.fire({
                             title: "Deleted!",
-                            text: "Your file has been deleted.",
-                            icon: "success"
+                            text: "Your book has been deleted.",
+                            icon: "success",
+                            confirmButtonColor: "#3B82F6",
+                            background: "var(--color-base-300)",
+                            color: "var(--color-base-content)",
                         });
                         setCurrentbook(currentbook.filter(bokie => bokie._id !== id))
                     })
@@ -75,7 +83,7 @@ export default function AllMyBooks({ book }) {
 
     return (
         <>
-            <tr className="border-b w-full border-gray-200 hover:bg-linear-to-r from-blue-50 to-indigo-50 transition-all duration-200 cursor-pointer">
+            <tr className="border-b w-full border-secondary transition-all duration-200 cursor-pointer">
                 <td className="py-2 px-3 md:py-4 md:px-5">
                     <div className="relative w-14 h-20">
                         <img
@@ -85,7 +93,7 @@ export default function AllMyBooks({ book }) {
                         />
                     </div>
                 </td>
-                <td className="py-2 px-3 md:py-4 md:px-5 font-semibold text-sm md:text-base text-gray-800 hover:text-blue-600 transition-colors duration-200">
+                <td className="py-2 px-3 md:py-4 md:px-5 font-semibold text-sm md:text-base text-base-content hover:text-blue-600 transition-colors duration-200">
                     {book.title}
                 </td>
                 <td className="py-2 px-3 md:py-4 md:px-5 text-sm md:text-base text-gray-600 italic">{book.author}</td>
@@ -117,7 +125,7 @@ export default function AllMyBooks({ book }) {
 
             {isModalOpen && (
                 <div className="fixed inset-0 bg-black/40 backdrop-blur-md flex justify-center items-center z-50">
-                    <div className="bg-white rounded-2xl p-8 w-full max-w-lg shadow-xl animate-fadeIn">
+                    <div className="bg-base-300 rounded-2xl p-8 w-full max-w-lg shadow-xl animate-fadeIn">
                         <h2 className="text-2xl font-bold mb-5 text-center">
                             Edit Book
                         </h2>

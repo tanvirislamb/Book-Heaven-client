@@ -14,7 +14,7 @@ export default function Comments({ comment }) {
                         : (<IoPersonCircleOutline className="text-5xl" />)
                 }
             </div>
-            <div className="bg-gray-50 px-3 py-1 rounded-2xl shadow-md">
+            <div className="bg-base-300 px-3 py-1 rounded-2xl shadow-md">
                 <p className="font-bold">{comment.name}</p>
                 <p className="font-extralight">{comment.comment}</p>
             </div>

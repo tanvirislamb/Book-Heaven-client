@@ -26,17 +26,20 @@ export default function AddBook() {
                 Swal.fire({
                     title: "Book added successfully",
                     icon: "success",
-                    draggable: true
+                    draggable: true,
+                    confirmButtonColor: "#3B82F6",
+                    background: "var(--color-base-300)",
+                    color: "var(--color-base-content)",
                 });
                 form.reset();
             })
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 to-indigo-100 py-12 px-6">
-            <div className="bg-white shadow-xl rounded-3xl w-full max-w-2xl p-10">
+        <div className="min-h-screen flex items-center justify-center bg-primary py-12 px-6">
+            <div className="bg-base-300 shadow-xl rounded-3xl w-full max-w-2xl p-10">
 
-                <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">
+                <h2 className="text-3xl font-bold text-center text-base-content mb-2">
                     Add a New Book 📚
                 </h2>
                 <p className="text-center text-gray-500 mb-8">
@@ -46,7 +49,7 @@ export default function AddBook() {
                 <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Title */}
                     <div className="col-span-1">
-                        <label className="block text-gray-700 font-semibold mb-1">Title</label>
+                        <label className="block text-base-content font-semibold mb-1">Title</label>
                         <input
                             type="text"
                             name="title"
@@ -58,7 +61,7 @@ export default function AddBook() {
 
                     {/* Author */}
                     <div className="col-span-1">
-                        <label className="block text-gray-700 font-semibold mb-1">Author</label>
+                        <label className="block text-base-content font-semibold mb-1">Author</label>
                         <input
                             type="text"
                             name="author"
@@ -70,7 +73,7 @@ export default function AddBook() {
 
                     {/* Genre */}
                     <div className="col-span-1">
-                        <label className="block text-gray-700 font-semibold mb-1">Genre</label>
+                        <label className="block text-base-content font-semibold mb-1">Genre</label>
                         <input
                             type="text"
                             name="genre"
@@ -83,7 +86,7 @@ export default function AddBook() {
 
                     {/* Rating */}
                     <div className="col-span-1">
-                        <label className="block text-gray-700 font-semibold mb-1">Rating (1–5)</label>
+                        <label className="block text-base-content font-semibold mb-1">Rating (1–5)</label>
                         <input
                             type="number"
                             name="rating"
@@ -99,7 +102,7 @@ export default function AddBook() {
 
                     {/* Cover Image */}
                     <div className="col-span-1 md:col-span-2">
-                        <label className="block text-gray-700 font-semibold mb-1">Cover Image URL</label>
+                        <label className="block text-base-content font-semibold mb-1">Cover Image URL</label>
                         <input
                             type="text"
                             name="coverImage"
@@ -112,7 +115,7 @@ export default function AddBook() {
 
                     {/* User Email */}
                     <div className="col-span-1 md:col-span-2">
-                        <label className="block text-gray-700 font-semibold mb-1">Your Email</label>
+                        <label className="block text-base-content font-semibold mb-1">Your Email</label>
                         <input
                             type="email"
                             name="userEmail"
@@ -125,7 +128,7 @@ export default function AddBook() {
 
                     {/* Summary */}
                     <div className="col-span-1 md:col-span-2">
-                        <label className="block text-gray-700 font-semibold mb-1">Summary</label>
+                        <label className="block text-base-content font-semibold mb-1">Summary</label>
                         <textarea
                             name="summary"
                             rows="4"
@@ -140,7 +143,7 @@ export default function AddBook() {
                     <div className="col-span-1 md:col-span-2">
                         <button
                             type="submit"
-                            className="w-full bg-linear-to-r from-blue-500 to-indigo-600 text-white py-3 rounded-xl font-semibold shadow-md hover:from-blue-600 hover:to-indigo-700 transition-all"
+                            className="w-full bg-linear-to-r from-blue-500 to-indigo-600 text-white py-3 rounded-xl font-semibold shadow-md hover:from-blue-600 hover:to-inbase-content transition-all"
                         >
                             Add Book
                         </button>

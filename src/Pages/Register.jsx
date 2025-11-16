@@ -97,10 +97,10 @@ export default function Register() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 to-indigo-100 py-12 px-6">
-            <div className="bg-white shadow-xl rounded-3xl w-full max-w-md p-8">
+        <div className="min-h-screen flex items-center justify-center bg-primary py-12 px-6">
+            <div className="bg-base-300 shadow-xl rounded-3xl w-full max-w-md p-8">
                 {/* Title */}
-                <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">
+                <h2 className="text-3xl font-bold text-center text-base-content mb-2">
                     Create Your Account
                 </h2>
                 <p className="text-center text-gray-500 mb-8">
@@ -111,7 +111,7 @@ export default function Register() {
                 <form onSubmit={handleRegister} className="space-y-5">
                     {/* Name */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-1">Full Name</label>
+                        <label className="block text-base-content font-semibold mb-1">Full Name</label>
                         <input
                             type="text"
                             name="name"
@@ -123,7 +123,7 @@ export default function Register() {
 
                     {/* Photo URL */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-1">Photo URL</label>
+                        <label className="block text-base-content font-semibold mb-1">Photo URL</label>
                         <input
                             type="text"
                             name="photoUrl"
@@ -134,7 +134,7 @@ export default function Register() {
 
                     {/* Email */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-1">Email</label>
+                        <label className="block text-base-content font-semibold mb-1">Email</label>
                         <input
                             type="email"
                             name="email"
@@ -146,7 +146,7 @@ export default function Register() {
 
                     {/* Password */}
                     <div>
-                        <label className="block text-gray-700 font-semibold mb-1">Password</label>
+                        <label className="block text-base-content font-semibold mb-1">Password</label>
                         <div className="relative">
                             <input
                                 type={showPassword ? "text" : "password"}
@@ -173,7 +173,7 @@ export default function Register() {
                     {/* Submit */}
                     <button
                         type="submit"
-                        className="w-full bg-linear-to-r from-blue-500 to-indigo-600 text-white font-semibold py-3 rounded-xl shadow-md hover:from-blue-600 hover:to-indigo-700 transition-all duration-300"
+                        className="w-full bg-linear-to-r from-blue-500 to-indigo-600 text-white font-semibold py-3 rounded-xl shadow-md hover:from-blue-600 hover:to-inbase-conttext-base-content transition-all duration-300"
                     >
                         Register
                     </button>
@@ -192,10 +192,10 @@ export default function Register() {
                 {/* Google Sign-In */}
                 <button
                     onClick={handleGoogleSignIn}
-                    className="w-full flex items-center justify-center gap-3 border border-gray-300 py-3 rounded-xl shadow-sm hover:bg-gray-50 transition-all duration-200"
+                    className="w-full flex items-center justify-center gap-3 border border-gray-300 py-3 rounded-xl shadow-sm transition-all cursor-pointer duration-200"
                 >
                     <FcGoogle className="text-2xl" />
-                    <span className="font-medium text-gray-700">Sign in with Google</span>
+                    <span className="font-medium text-base-content">Sign in with Google</span>
                 </button>
 
                 {/* Navigate to Login */}
