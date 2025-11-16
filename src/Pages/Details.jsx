@@ -4,6 +4,7 @@ import { AuthContext } from "../Provider/AuthProvider"
 import axios from "axios"
 import Comments from "../Component/Comments"
 import { RiSendPlaneFill } from "react-icons/ri"
+import { IoPersonCircleOutline } from "react-icons/io5"
 
 export default function Details() {
 
@@ -100,11 +101,21 @@ export default function Details() {
             <form
                 onSubmit={handleComment}
                 className="flex items-center gap-3 bg-white p-4 rounded-2xl shadow-md border border-gray-200">
-                <img
-                    src={user.photoURL}
-                    alt="User"
-                    className="w-12 h-12 rounded-full object-cover border border-gray-300"
-                />
+                <div>
+                    {
+                        user.photoURL ?
+                            (
+                                <img
+                                    src={user.photoURL}
+                                    alt="User"
+                                    className="w-12 h-12 rounded-full object-cover border border-gray-300"
+                                />
+                            )
+                            : (
+                                <IoPersonCircleOutline className="text-5xl" />
+                            )
+                    }
+                </div>
 
                 <div className="flex-1">
                     <input
