@@ -5,14 +5,14 @@ const ThemeToggle = () => {
 
     // Load saved theme on first mount
     useEffect(() => {
-        const savedTheme = localStorage.getItem("theme") || "halloween";
-        setIsDark(savedTheme === "halloween");
+        const savedTheme = localStorage.getItem("theme") || "mythemeDark";
+        setIsDark(savedTheme === "mythemeDark");
         document.documentElement.setAttribute("data-theme", savedTheme);
     }, []);
 
     // Handle toggle switch
     const handleThemeToggle = () => {
-        const newTheme = isDark ? "corporate" : "halloween";
+        const newTheme = isDark ? "mytheme" : "mythemeDark";
         document.documentElement.setAttribute("data-theme", newTheme);
         localStorage.setItem("theme", newTheme);
         setIsDark(!isDark);
