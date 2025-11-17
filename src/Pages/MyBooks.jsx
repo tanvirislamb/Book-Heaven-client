@@ -14,7 +14,13 @@ export default function MyBooks() {
             return
         }
 
-        axios(`http://localhost:3000/books/user/${user.uid}`)
+        axios.get(`http://localhost:3000/books/user/${user.uid}`,
+            {
+                headers: {
+                    authorization: `bearer ${user.accessToken}`
+                }
+            }
+        )
             .then(data => {
                 setMybooks(data.data)
                 setLoading(false)
@@ -22,7 +28,7 @@ export default function MyBooks() {
     }, [user])
 
     return (
-        <div className="max-w-[1800px] mx-auto">
+        <div className="max-w-[1800px] mx-auto h-screen">
             <p className="text-center text-xl md:text-2xl font-extrabold py-3 md:py-6">My Books</p>
             {
                 loading ?

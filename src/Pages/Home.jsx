@@ -1,3 +1,4 @@
+import AboutTheBookHaven from "../Component/AboutTheBookHaven";
 import HeroSection from "../Component/Hero";
 import Latest from "../Component/Latest";
 import TopBooks from "../Component/TopBooks";
@@ -11,6 +12,9 @@ export default function Home() {
             </div>
             <div>
                 <TopBooks></TopBooks>
+            </div>
+            <div className="md:pt-15">
+                <AboutTheBookHaven></AboutTheBookHaven>
             </div>
         </div>
     )

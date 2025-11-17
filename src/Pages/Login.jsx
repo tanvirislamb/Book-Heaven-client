@@ -11,6 +11,8 @@ export default function Login() {
     const location = useLocation()
     const navigate = useNavigate()
     const [showPassword, setShowPassword] = useState(false);
+    const [error, setError] = useState('');
+    const [err, setErr] = useState(false)
     const togglePassword = () => setShowPassword(!showPassword);
 
     const handleLogin = (e) => {
@@ -25,6 +27,7 @@ export default function Login() {
                 navigate(`${location.state ? location.state : '/'}`)
             })
             .catch((error) => {
+                setErr(true)
                 setError("Invalid email or password")
             })
 
@@ -98,6 +101,12 @@ export default function Login() {
                                 )}
                             </button>
                         </div>
+                        <p className="text-blue-500 font-bold text-sm pl-1 hover:underline cursor-pointer">Forget Password</p>
+                        <p className="text-red-500 text-sm pl-1">
+                            {
+                                err ? error : ""
+                            }
+                        </p>
                     </div>
 
                     {/* Submit */}
