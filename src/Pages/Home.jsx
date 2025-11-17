@@ -1,5 +1,6 @@
 import HeroSection from "../Component/Hero";
 import Latest from "../Component/Latest";
+import TopBooks from "../Component/TopBooks";
 
 export default function Home() {
     return (
@@ -7,6 +8,9 @@ export default function Home() {
             <HeroSection></HeroSection>
             <div className="py-10">
                 <Latest></Latest>
+            </div>
+            <div>
+                <TopBooks></TopBooks>
             </div>
         </div>
     )

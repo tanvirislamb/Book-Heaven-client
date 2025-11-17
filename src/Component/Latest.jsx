@@ -10,7 +10,7 @@ export default function Latest() {
         fetch('http://localhost:3000/books')
             .then(res => res.json())
             .then(data => {
-                setLatest(data.slice(0, 6))
+                setLatest(data.slice(-6).reverse())
                 setLoading(false)
             })
 

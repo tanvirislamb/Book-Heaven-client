@@ -21,9 +21,14 @@ const HeroSection = () => {
                     Your personal digital library. Discover, manage, and share your
                     favorite reads all in one place.
                 </p>
-                <Link to='allbooks' className="bg-white text-blue-700 font-semibold text-lg px-6 py-3 rounded-full hover:bg-blue-100 transition-all duration-300">
-                    Explore All Books
-                </Link>
+                <div className="flex justify-center items-center gap-2">
+                    <Link to='allbooks' className="bg-white text-blue-700 font-semibold text-lg px-6 py-3 rounded-full hover:bg-blue-100 transition-all duration-300">
+                        Explore All Books
+                    </Link>
+                    <Link to='addbooks' className="bg-linear-to-r from-blue-500 to-indigo-600 text-white font-semibold text-lg px-6 py-3 rounded-full hover:bg-blue-100 transition-all duration-300">
+                        Add Book
+                    </Link>
+                </div>
             </div>
         </section>
     );
