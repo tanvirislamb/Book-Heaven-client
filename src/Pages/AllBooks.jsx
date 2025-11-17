@@ -30,6 +30,7 @@ export default function AllBooks() {
 
     return (
         <div className="bg-base-200 py-6">
+            <title>All Books</title>
             <div className="flex justify-between items-center">
                 <h2 className="md:text-2xl font-bold px-2 md:px-6 mb-2 md:mb-6">All Books</h2>
                 <div className="dropdown mr-5">

@@ -29,6 +29,7 @@ export default function MyBooks() {
 
     return (
         <div className="max-w-[1800px] mx-auto h-screen">
+            <title>My Books</title>
             <p className="text-center text-xl md:text-2xl font-extrabold py-3 md:py-6">My Books</p>
             {
                 loading ?

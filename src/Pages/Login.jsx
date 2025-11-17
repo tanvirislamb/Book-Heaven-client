@@ -55,6 +55,7 @@ export default function Login() {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-primary py-12 px-6">
+            <title>Book Heaven | Log In</title>
             <div className="bg-base-300 shadow-xl rounded-3xl w-full max-w-md p-8">
                 {/* Title */}
                 <h2 className="text-3xl font-bold text-center text-base-content mb-2">

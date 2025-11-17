@@ -37,6 +37,7 @@ export default function AddBook() {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-primary py-12 px-6">
+            <title>Add Books</title>
             <div className="bg-base-300 shadow-xl rounded-3xl w-full max-w-2xl p-10">
 
                 <h2 className="text-3xl font-bold text-center text-base-content mb-2">
