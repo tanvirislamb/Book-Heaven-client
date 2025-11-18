@@ -7,7 +7,7 @@ export default function Latest() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:3000/books')
+        fetch('https://book-heaven-liard.vercel.app/books')
             .then(res => res.json())
             .then(data => {
                 setLatest(data.slice(-6).reverse())

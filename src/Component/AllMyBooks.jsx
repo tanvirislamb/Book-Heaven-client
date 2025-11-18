@@ -30,7 +30,7 @@ export default function AllMyBooks({ book }) {
             userEmail,
             summary
         }
-        axios.patch(`http://localhost:3000/books/${id}`, updateData)
+        axios.patch(`https://book-heaven-liard.vercel.app/books/${id}`, updateData)
             .then(() => {
                 Swal.fire({
                     title: "Updated",
@@ -62,7 +62,7 @@ export default function AllMyBooks({ book }) {
             color: "var(--color-base-content)",
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:3000/books/${id}`)
+                axios.delete(`https://book-heaven-liard.vercel.app/books/${id}`)
                     .then(() => {
                         Swal.fire({
                             title: "Deleted!",

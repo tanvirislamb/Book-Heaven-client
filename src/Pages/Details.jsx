@@ -15,12 +15,12 @@ export default function Details() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch(`http://localhost:3000/books/${id}`)
+        fetch(`https://book-heaven-liard.vercel.app/books/${id}`)
             .then(res => res.json())
             .then(data => {
                 setDetails(data)
             })
-        axios(`http://localhost:3000/comments/${id}`)
+        axios(`https://book-heaven-liard.vercel.app/comments/${id}`)
             .then((data) => {
                 setComments(data.data)
                 setLoading(false)
@@ -36,7 +36,7 @@ export default function Details() {
             photoURL: user.photoURL,
             comment: userComment
         }
-        axios.post('http://localhost:3000/comments', newComment)
+        axios.post('https://book-heaven-liard.vercel.app/comments', newComment)
             .then(() => {
                 setComments([...comments, newComment])
                 e.target.reset()

@@ -6,7 +6,7 @@ export default function TopBooks() {
     const [TopBooks, setTopbooks] = useState([])
 
     useEffect(() => {
-        axios('http://localhost:3000/books/top')
+        axios('https://book-heaven-liard.vercel.app/books/top')
             .then(data => {
                 setTopbooks(data.data)
             })

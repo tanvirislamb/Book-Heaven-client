@@ -14,7 +14,7 @@ export default function MyBooks() {
             return
         }
 
-        axios.get(`http://localhost:3000/books/user/${user.uid}`,
+        axios.get(`https://book-heaven-liard.vercel.app/books/user/${user.uid}`,
             {
                 headers: {
                     authorization: `bearer ${user.accessToken}`

@@ -44,7 +44,7 @@ export default function Login() {
                     photoURL: user.photoURL,
                     email: user.email
                 }
-                axios.post('http://localhost:3000/user', newUser)
+                axios.post('https://book-heaven-liard.vercel.app/user', newUser)
                     .then(data => {
                         console.log(data)
                     })

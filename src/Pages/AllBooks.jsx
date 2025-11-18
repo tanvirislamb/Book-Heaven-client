@@ -7,7 +7,7 @@ export default function AllBooks() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch("http://localhost:3000/books")
+        fetch("https://book-heaven-liard.vercel.app/books")
             .then((res) => res.json())
             .then((data) => {
                 setBooks(data);
@@ -35,7 +35,7 @@ export default function AllBooks() {
                 <h2 className="md:text-2xl font-bold px-2 md:px-6 mb-2 md:mb-6">All Books</h2>
                 <div className="dropdown mr-5">
                     <div tabIndex={0} role="button" className="border border-secondary p-2 rounded-md cursor-pointer">{sort ? sort : 'Sort By Rating'}</div>
-                    <ul tabIndex="-1" className="dropdown-content menu bg-base-300 rounded-box z-1 w-52 p-2 shadow-sm">
+                    <ul tabIndex="-1" className="dropdown-content menu bg-base-300 rounded-box z-1 w-40 p-2 right-0.5 shadow-sm">
                         <li onClick={() => sortHandle("high")}><a>High to Low</a></li>
                         <li onClick={() => sortHandle("low")}><a>Low to High</a></li>
                     </ul>

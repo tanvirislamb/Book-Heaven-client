@@ -21,7 +21,7 @@ export default function AddBook() {
 
         const newBooks = { userId, title, author, genre, rating, coverImage, userEmail, summary }
 
-        axios.post('http://localhost:3000/books', newBooks)
+        axios.post('https://book-heaven-liard.vercel.app/books', newBooks)
             .then(() => {
                 Swal.fire({
                     title: "Book added successfully",

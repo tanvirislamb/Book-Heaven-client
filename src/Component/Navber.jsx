@@ -56,7 +56,7 @@ export default function Navber() {
                     </ul>
                 </div>
                 <Link to='/'>
-                    <p className="font-extrabold lg:text-2xl text-blue-500 drop-shadow-md">Book Heaven</p>
+                    <p className="font-extrabold lg:text-2xl text-blue-500 drop-shadow-md">📚 Book Heaven</p>
                 </Link>
             </div>
             <div className="hidden md:flex">

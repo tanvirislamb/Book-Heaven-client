@@ -61,7 +61,7 @@ export default function Register() {
                     photoURL: photoUrl,
                     email: email
                 }
-                axios.post('http://localhost:3000/user', newUser)
+                axios.post('https://book-heaven-liard.vercel.app/user', newUser)
                     .then(data => {
                         console.log(data)
                     })
@@ -87,7 +87,7 @@ export default function Register() {
                     photoURL: user.photoURL,
                     email: user.email
                 }
-                axios.post('http://localhost:3000/user', newUser)
+                axios.post('https://book-heaven-liard.vercel.app/user', newUser)
                     .then(data => {
                         console.log(data)
                     })
