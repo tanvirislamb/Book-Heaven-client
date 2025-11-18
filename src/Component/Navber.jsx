@@ -42,7 +42,7 @@ export default function Navber() {
     </>
 
     return (
-        <div className="w-full shadow py-2 px-6 flex justify-between items-center sticky z-30 top-0 bg-base-100 dark:bg-base-100/90 backdrop-blur-md">
+        <div className="w-full shadow py-2 px-3 md:px-6 flex justify-between items-center sticky z-30 top-0 bg-base-100 dark:bg-base-100/90 backdrop-blur-md">
             <div className="flex items-center gap-3">
                 <div className="flex md:hidden items-center">
                     <button popoverTarget="popover-1" style={{ anchorName: "--anchor-1" } /* as React.CSSProperties */}>
@@ -76,12 +76,12 @@ export default function Navber() {
                                             <img
                                                 src={user.photoURL}
                                                 alt="User Avatar"
-                                                className="w-7 h-7 lg:w-10 lg:h-10 rounded-full object-cover border-2 border-gray-300 hover:scale-105 transition-transform duration-300"
+                                                className="w-5 h-5 lg:w-10 lg:h-10 rounded-full object-cover border-2 border-gray-300 hover:scale-105 transition-transform duration-300"
                                             />
 
                                         </div>
                                         :
-                                        <IoPersonCircleOutline className="text-5xl peer cursor-pointer" />
+                                        <IoPersonCircleOutline className="text-4xl md:text-5xl peer cursor-pointer" />
                                 }
                                 <div className="absolute right-full top-1/2 -translate-y-1/2 mr-3 
                                               bg-gray-800 text-white text-sm rounded-md px-3 py-1 
@@ -95,7 +95,7 @@ export default function Navber() {
                                 className="px-3 py-1 text-[12px] lg:text-base rounded-md  bg-linear-to-r from-blue-500 to-indigo-600 text-white font-medium cursor-pointer">Log Out</button>
                         </div>
                         :
-                        <div className="space-x-3">
+                        <div className="space-x-2 md:space-x-3">
                             <Link to='login' className="px-3 py-1 text-[12px] lg:text-base rounded-md  bg-linear-to-r from-blue-500 to-indigo-600 text-white font-medium">Log In</Link>
                             <Link to='register' className="px-3 py-1 text-[12px] lg:text-base rounded-md  bg-linear-to-r from-blue-500 to-indigo-600 text-white font-medium">Register</Link>
                         </div>

@@ -28,7 +28,7 @@ const ThemeToggle = () => {
 
             {/* Sun icon (Light mode) */}
             <svg
-                className="swap-off max-md:h-8 max-md:w-8 max-md:ml-11 h-8 w-8 fill-current"
+                className="swap-off h-6 w-6 max-md:ml-11 md:h-8 md:w-8 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
             >
@@ -37,7 +37,7 @@ const ThemeToggle = () => {
 
             {/* Moon icon (Dark mode) */}
             <svg
-                className="swap-on max-md:h-8 max-md:w-8 max-md:ml-11 h-8 w-8 fill-current"
+                className="swap-on h-6 w-6 max-md:ml-11 md:h-8 md:w-8 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
             >
